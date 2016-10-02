@@ -5,7 +5,7 @@ Example of simple app in both Java and Kotlin
 
 For Java version of app: [Pure_Java tag](https://github.com/siga111/KotlinAppSample/tree/Pure_Java)
 * Simple MVP architecture
-* Butternkife for view injection
+* Butterknife for view injection
 * Dummy data loaded from Json using Gson
 * Simple unit test with Mockito
 
