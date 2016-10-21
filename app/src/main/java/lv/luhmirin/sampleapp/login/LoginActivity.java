@@ -11,11 +11,11 @@ import android.text.Editable;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import lv.luhmirin.sampleapp.R;
+import lv.luhmirin.sampleapp.ViewExtenstions;
 import lv.luhmirin.sampleapp.list.ListActivity;
 
 /**
@@ -61,8 +61,8 @@ public class LoginActivity extends AppCompatActivity implements LoginViewContrac
 
     @Override
     public void cleanErrors() {
-        emailLayout.setError(null);
-        passwordLayout.setError(null);
+        ViewExtenstions.removeError(emailLayout);
+        ViewExtenstions.removeError(passwordLayout);
     }
 
     @Override
@@ -87,7 +87,11 @@ public class LoginActivity extends AppCompatActivity implements LoginViewContrac
 
     @Override
     public void loginSuccess() {
-        startActivity(new Intent(this, ListActivity.class));
+        Intent intent = new Intent(this, ListActivity.class);
+        intent.setAction("");
+        intent.putExtra("b", 'a');
+        intent.putExtra("c", "3");
+        startActivity(intent);
     }
 }
 

@@ -1,15 +1,12 @@
 package lv.luhmirin.sampleapp.list;
 
 import android.support.annotation.NonNull;
-
-import com.google.gson.GsonBuilder;
-
+import com.google.gson.Gson;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
-
 import lv.luhmirin.sampleapp.App;
 import lv.luhmirin.sampleapp.list.model.ShoppingItem;
 import lv.luhmirin.sampleapp.list.model.ShoppingItemList;
@@ -24,7 +21,7 @@ class ListRepository {
             InputStream stream = App.getAppContext().getAssets().open("MOCK_DATA.json");
             reader = new InputStreamReader(stream);
 
-            result = new GsonBuilder().create().fromJson(reader, ShoppingItemList.class);
+            result = new Gson().fromJson(reader, ShoppingItemList.class);
 
             reader.close();
         } catch (IOException e) {
