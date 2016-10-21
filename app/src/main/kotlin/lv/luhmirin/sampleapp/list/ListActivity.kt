@@ -3,6 +3,8 @@ package lv.luhmirin.sampleapp.list
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
+import android.util.Log
+import com.pawegio.kandroid.d
 import kotlinx.android.synthetic.main.activity_list.*
 import lv.luhmirin.sampleapp.R
 import lv.luhmirin.sampleapp.list.model.ShoppingItem

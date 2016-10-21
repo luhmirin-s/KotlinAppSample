@@ -1,6 +1,6 @@
 package lv.luhmirin.sampleapp.list
 
-import com.google.gson.GsonBuilder
+import com.google.gson.Gson
 import com.pawegio.kandroid.runAsync
 import lv.luhmirin.sampleapp.App
 import lv.luhmirin.sampleapp.list.model.ShoppingItem
@@ -10,7 +10,7 @@ import java.io.InputStreamReader
 
 internal class ListRepository {
 
-    fun getData(callback: (items: List<ShoppingItem>) -> Any) {
+    fun getData(callback: (items: List<ShoppingItem>) -> Unit) {
         runAsync {
             var result: List<ShoppingItem> = emptyList()
 
@@ -30,6 +30,6 @@ internal class ListRepository {
     }
 
     private fun InputStreamReader.readFromJson(): List<ShoppingItem> =
-            GsonBuilder().create().fromJson(this, ShoppingItemList::class.java)
+            Gson().fromJson(this, ShoppingItemList::class.java)
 
 }

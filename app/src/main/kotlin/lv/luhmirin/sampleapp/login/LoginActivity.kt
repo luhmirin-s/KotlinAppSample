@@ -1,5 +1,6 @@
 package lv.luhmirin.sampleapp.login
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.pawegio.kandroid.IntentFor
@@ -50,7 +51,16 @@ class LoginActivity : AppCompatActivity(), LoginViewContract {
     }
 
     override fun loginSuccess() {
-        IntentFor<ListActivity>(this).start(this)
+        startActivity( Intent(this, ListActivity::class.java).apply {
+            putExtra("b", 'a')
+            putExtra("c", "3")
+        })
+
+        IntentFor<ListActivity>(this).apply {
+
+            putExtra("b", 'a')
+            putExtra("c", "3")
+        }.start(this)
     }
 
 }

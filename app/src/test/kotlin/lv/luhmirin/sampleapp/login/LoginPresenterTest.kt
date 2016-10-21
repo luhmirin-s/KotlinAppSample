@@ -31,6 +31,8 @@ class LoginPresenterTest {
     fun showError_whenEmptyEmail() {
         subject.login("", "1234")
 
+        1 `should not equal` 3
+
         Verify on mockContract that mockContract.cleanErrors() was called
         Verify on mockContract that mockContract.noEmailError() was called
         VerifyNoFurtherInteractions on mockContract

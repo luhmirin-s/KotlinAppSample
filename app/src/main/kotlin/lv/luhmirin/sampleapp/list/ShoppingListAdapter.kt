@@ -24,9 +24,7 @@ internal class ShoppingListAdapter(private val context: Context, var items: List
         holder.bind(items[position])
     }
 
-    override fun getItemCount(): Int {
-        return items.size
-    }
+    override fun getItemCount() = items.size
 
     internal class ShoppingItemHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
